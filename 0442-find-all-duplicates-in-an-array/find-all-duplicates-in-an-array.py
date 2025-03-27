@@ -7,8 +7,7 @@ class Solution:
 
             if nums[idx] < 0:
                 output.append(idx + 1)
-            else:
-                nums[idx] = -nums[idx]
+            nums[idx] = -nums[idx]
         
         return output
         
