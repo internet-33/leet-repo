@@ -1,14 +1,14 @@
 class Solution:
     def findDuplicates(self, nums: List[int]) -> List[int]:
-        hashmap = defaultdict(int)
         output = []
 
-        for i in nums:
-            if i in hashmap:
-                hashmap[i] += 1
-                output.append(i)
+        for num in nums:
+            idx = abs(num) - 1 # 4-1=3
+
+            if nums[idx] < 0:
+                output.append(idx + 1)
             else:
-                hashmap[i] = 1
+                nums[idx] = -nums[idx]
         
         return output
         
