@@ -9,8 +9,9 @@ class Solution(object):
         for num in nums:
             idx = abs(num) - 1
 
-            if nums[idx] > 0:
-                nums[idx] = -nums[idx]
-            else:
+            if nums[idx] < 0:
                 output.append(idx+1)
+            
+            nums[idx] = -nums[idx]
+            
         return output
